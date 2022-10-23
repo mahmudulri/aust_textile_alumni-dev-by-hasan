@@ -411,7 +411,7 @@ class mypost_list extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: screenHeigth * 0.015,
+                        height: screenHeigth * 0.016,
                       ),
                       Row(
                         children: [
