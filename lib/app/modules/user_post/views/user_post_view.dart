@@ -140,141 +140,123 @@ class _UserPostViewState extends State<UserPostView> {
                   JobPostView(),
                   SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
-                    child: Stack(
+                    child: Column(
                       children: [
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: screenHeigth * 0.020,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                                right: 20,
-                              ),
-                              child: Container(
-                                height: screenHeigth * 0.070,
-                                width: screenWidth - 20,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffE5E5E5),
-                                      blurRadius: 5.0, // soften the shadow
-                                      spreadRadius: 3.0, //extend the shadow
-                                      offset: Offset(
-                                        0.0, // Move to right 5  horizontally
-                                        0.0, // Move to bottom 5 Vertically
-                                      ),
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(10),
-                                  // border: Border.all(
-                                  //   color: Color(0xffC4C4C4),
-                                  //   width: 2,
-                                  // ),
+                        SizedBox(
+                          height: screenHeigth * 0.020,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 20,
+                            right: 20,
+                          ),
+                          child: Container(
+                            height: screenHeigth * 0.070,
+                            width: screenWidth - 20,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color(0xffE5E5E5),
+                                  blurRadius: 5.0, // soften the shadow
+                                  spreadRadius: 3.0, //extend the shadow
+                                  offset: Offset(
+                                    0.0, // Move to right 5  horizontally
+                                    0.0, // Move to bottom 5 Vertically
+                                  ),
                                 ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 5,
-                                      child: Container(
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                            left: 10,
-                                            right: 10,
-                                          ),
-                                          child: TextFormField(
-                                            decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                            ),
-                                          ),
+                              ],
+                              borderRadius: BorderRadius.circular(10),
+                              // border: Border.all(
+                              //   color: Color(0xffC4C4C4),
+                              //   width: 2,
+                              // ),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 5,
+                                  child: Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                          border: InputBorder.none,
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      child: Expanded(
-                                        flex: 1,
-                                        child: Icon(
-                                          Icons.search,
-                                          size: screenHeigth * 0.045,
-                                          color: Color(0xff777777),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
+                                Container(
+                                  child: Expanded(
+                                    flex: 1,
+                                    child: Icon(
+                                      Icons.search,
+                                      size: screenHeigth * 0.045,
+                                      color: Color(0xff777777),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: screenHeigth * 0.030,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 20,
+                            right: 20,
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.calendar_month),
+                              SizedBox(
+                                width: screenWidth * 0.020,
                               ),
-                            ),
-                            SizedBox(
-                              height: screenHeigth * 0.030,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 20,
-                                right: 20,
+                              InkWell(
+                                onTap: () {
+                                  pickDateRange();
+                                },
+                                child: Text(
+                                    '${start.year}  ${start.month.toString()}  ${start.day}'),
                               ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.calendar_month),
-                                  SizedBox(
-                                    width: screenWidth * 0.020,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      pickDateRange();
-                                    },
-                                    child: Text(
-                                        '${start.year}  ${start.month.toString()}  ${start.day}'),
-                                  ),
-                                  SizedBox(
-                                    width: screenWidth * 0.010,
-                                  ),
-                                  Text("-"),
-                                  SizedBox(
-                                    width: screenWidth * 0.010,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      pickDateRange();
-                                    },
-                                    child: Text(
-                                        '${end.year}  ${end.month}  ${end.day}'),
-                                  ),
-                                  Spacer(),
-                                  Text("All post"),
-                                  SizedBox(
-                                    width: screenWidth * 0.010,
-                                  ),
-                                  Icon(
-                                    Icons.filter_list,
-                                  ),
-                                ],
+                              SizedBox(
+                                width: screenWidth * 0.010,
                               ),
-                            ),
-                            //  Post List....................................../Post List....................................../Post list post list Start
-                            SizedBox(
-                              height: screenHeigth * 0.050,
-                            ),
-                            mypost_list(
-                              screenWidth: screenWidth,
-                              screenHeigth: screenHeigth,
-                            ),
-                            SizedBox(
-                              height: screenHeigth * 0.050,
-                            ),
-                            mypost_list(
-                              screenWidth: screenWidth,
-                              screenHeigth: screenHeigth,
-                            ),
-                            SizedBox(
-                              height: screenHeigth * 0.050,
-                            ),
-                            mypost_list(
-                              screenWidth: screenWidth,
-                              screenHeigth: screenHeigth,
-                            ),
-                          ],
+                              Text("-"),
+                              SizedBox(
+                                width: screenWidth * 0.010,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  pickDateRange();
+                                },
+                                child: Text(
+                                    '${end.year}  ${end.month}  ${end.day}'),
+                              ),
+                              Spacer(),
+                              Text("All post"),
+                              SizedBox(
+                                width: screenWidth * 0.010,
+                              ),
+                              Icon(
+                                Icons.filter_list,
+                              ),
+                            ],
+                          ),
+                        ),
+                        //  Post List....................................../Post List....................................../Post list post list Start
+                        SizedBox(
+                          height: screenHeigth * 0.050,
+                        ),
+                        mypost_list(
+                          screenWidth: screenWidth,
+                          screenHeigth: screenHeigth,
                         ),
                       ],
                     ),

@@ -23,6 +23,10 @@ dependencies:
   delta_to_html: ^0.2.0
   lottie: ^1.4.1
   eva_icons_flutter: ^3.1.0
+  dots_indicator: ^2.1.0
+  carousel_slider: ^4.1.1
+
+
 
   flutter: 
     sdk: flutter

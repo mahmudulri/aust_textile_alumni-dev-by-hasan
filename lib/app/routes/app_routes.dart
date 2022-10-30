@@ -14,6 +14,9 @@ abstract class Routes {
   static const BASE = _Paths.BASE;
   static const DETAILS_SCREEN = _Paths.DETAILS_SCREEN;
   static const MESSAGE = _Paths.MESSAGE;
+  static const USERPROFILE = _Paths.USERPROFILE;
+  static const MYEVENTS = _Paths.MYEVENTS;
+  static const MYEVENTS_DETAILS = _Paths.MYEVENTS_DETAILS;
 }
 
 abstract class _Paths {
@@ -27,4 +30,7 @@ abstract class _Paths {
   static const BASE = '/base';
   static const DETAILS_SCREEN = '/details-screen';
   static const MESSAGE = '/message';
+  static const USERPROFILE = '/user-profile';
+  static const MYEVENTS = '/my-events';
+  static const MYEVENTS_DETAILS = '/my-events-details';
 }

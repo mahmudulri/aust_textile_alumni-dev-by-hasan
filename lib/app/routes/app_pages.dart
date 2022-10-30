@@ -1,3 +1,6 @@
+import 'package:aust_textile_alumni/app/modules/my%20events/views/my_event.dart';
+import 'package:aust_textile_alumni/app/modules/my%20events/views/my_events_details.dart';
+import 'package:aust_textile_alumni/app/modules/user_profile/views/profile.dart';
 import 'package:get/get.dart';
 
 import 'package:aust_textile_alumni/app/modules/alumni_book/bindings/alumni_book_binding.dart';
@@ -26,7 +29,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.USER_POST;
+  static const INITIAL = Routes.MYEVENTS_DETAILS;
 
   static final routes = [
     GetPage(
@@ -78,6 +81,18 @@ class AppPages {
       name: _Paths.MESSAGE,
       page: () => MessageView(),
       binding: MessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.USERPROFILE,
+      page: () => UserProfile(),
+    ),
+    GetPage(
+      name: _Paths.MYEVENTS,
+      page: () => MyEvents(),
+    ),
+    GetPage(
+      name: _Paths.MYEVENTS_DETAILS,
+      page: () => MyEventsDetails(),
     ),
   ];
 }
